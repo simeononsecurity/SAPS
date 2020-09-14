@@ -1,0 +1,1 @@
+(New-Object Net.WebClient).DownloadFile('http://download.sysinternals.com/Files/SysinternalsSuite.zip','C:\Tools\SysinternalsSuite.zip');(new-object -com shell.application).namespace('C:\Tools').CopyHere((new-object -com shell.application).namespace('C:\Tools\SysinternalsSuite.zip').Items(),16)

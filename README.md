@@ -1,2 +1,4 @@
-# SAPS
-A collection of scripts to assists System Adminsitrators
+# System Adminsitrator PowerShell Scripts (SAPS)
+A Running Collection of Powershell Scripts for System Administrators
+
+# Please message me with any comments, suggestions, or concerns
