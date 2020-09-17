@@ -22,5 +22,5 @@ If(!(test-path $outputpath))
 ForEach ($Server in $computers) { 
 
     Invoke-Command -ComputerName $Server -Credential $cred -ScriptBlock {$computername = "$env:computername" ; $timestamp = "$(((get-date).ToUniversalTime()).ToString("yyyyMMddTHHmmssZ"))" ; $scriptname = "GetServicesFromDomainComputers2CSV" ; $file = "$scriptname-$computername-$timestamp.csv" ; $outputpath = "C:\temp\Scripts\$scriptname" ; $csvoutfile = "$path\$file" ; If(!(test-path $outputpath)){New-Item -ItemType Directory -Force -Path $outputpath}; Get-WmiObject win32_service | select-object name, displayname, state, startmode, pathname | export-csv -Force -path "$csvoutfile"} -ArgumentList $cred
-
+    Copy-Item -Path \\$Server\C$\temp\Scripts\$scriptname\* -Destination $outpath -Recurse -Force
 }
