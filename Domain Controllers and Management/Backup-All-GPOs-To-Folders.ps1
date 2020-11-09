@@ -1,4 +1,4 @@
-$domain = example.com
+$domain = "example.com"
 $gponamelist = (Get-GPO -All -Domain "$domain").DisplayName
 #$gpoidlist = (Get-GPO -All -Domain "$domain").Id
 
