@@ -1,6 +1,4 @@
 function Upload-Anon {
-param(
-function Upload-Anon {
 #Requires -Version 6.0
 param(
 [string]$File 
@@ -12,11 +10,3 @@ If (!$File){
     (Invoke-WebRequest -Method "Post" -Uri "https://api.anonfiles.com/upload" -Form @{file=(Get-Item $File)}).content
 }
 }
-
-
-}
-
-
-
-
-
