@@ -19,7 +19,7 @@ ForEach ($computer in ($computerlist).Name){
         $scriptname = "AuditInstalledSoftware2CSV"
         $file = "$scriptname-$computername-$timestamp.csv"
         $outputpath = "C:\temp\Scripts\$scriptname"
-        $csvoutfile = "$path\$file"
+        $csvoutfile = "$outputpath\$file"
         If(!(test-path $outputpath)){
             New-Item -ItemType Directory -Force -Path $outputpath
         }
